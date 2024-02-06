@@ -9,9 +9,32 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/lab": "^5.0.0-alpha.133",
+    "@mui/material": "^5.13.5",
+    "@mui/x-data-grid": "^6.7.0",
+    "@mui/x-date-pickers": "^6.19.3",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@tabler/icons": "^1.84.0",
+    "axios": "^1.4.0",
+    "cookies": "^0.8.0",
+    "date-fns": "^2.30.0",
+    "formik": "^2.4.2",
+    "fslightbox-react": "^1.7.6",
+    "next": "14.1.0",
+    "next-seo": "^6.1.0",
+    "prop-types": "^15.8.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "react-share": "^5.0.3",
+    "sweetalert2": "^11.7.12",
+    "swiper": "^11.0.6",
+    "swr": "^2.2.0",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^8",
