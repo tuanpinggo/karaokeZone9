@@ -43,7 +43,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 
 export default function BookingForm(){
     return(
-        <Box bgcolor={'#C19D60'} width={'100%'} height={'100%'} px={2}>
+        <Box bgcolor={'#C19D60'} width={'100%'} height={'100%'} px={2} borderRadius={1}>
             <Typography variant="h2" component={"h2"} textAlign={"center"} color="#000" fontSize={20} fontWeight={900} pt={3} pb={2}>THÔNG TIN ĐẶT PHÒNG HÁT</Typography>
             <Stack spacing={1} pb={4}>
                 <BootstrapInput 
