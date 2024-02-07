@@ -1,16 +1,17 @@
 import { Box, Divider, Pagination, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { formatTime } from "./formatTime";
 
-export function Post(){
+export function Post({data}){
     return(
         <Stack direction={{xs: "column", md: "row"}} spacing={{xs: 1,md: 5}} className="post">
-            <Link href={`/tin-tuc-khuyen-mai/slug`}>
+            <Link href={`/tin-tuc-khuyen-mai/${data?.slug}_id=${data?.id}`}>
                 <Image
-                    src="/assets/room1.jpg"
+                    src={data?.thumbnail || "/assets/room1.jpg"}
                     width={200}
                     height={150}
-                    alt="thumbnail"
+                    alt={data?.title}
                     style={{borderRadius: '8px'}}
                     className="imgHover"
                 />
@@ -20,31 +21,29 @@ export function Post(){
 
                 <Link href={`/tin-tuc-khuyen-mai/slug`}>
                     <Typography variant="h2" component={"h2"} fontWeight={700} fontSize={20} className="title">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        {data?.title}
                     </Typography>
                 </Link>
-                <Typography fontSize={14} fontWeight={300}>Ngày đăng: 20 tháng 10 năm 2024</Typography>
+                <Typography fontSize={14} fontWeight={300}>Ngày đăng: {formatTime(data?.post_date)}</Typography>
                 <Typography fontSize={15} fontWeight={400}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                    {data?.description}
                 </Typography>
             </Stack>
         </Stack>
     )
 }
 
-export default function ListPost(){
+export default function ListPost({posts}){
     return(
         <Box my={5}>
             <Stack spacing={3} divider={<Divider />}>
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
+                {posts.map(item =>
+                    <Post key={item.id} data={item}/>
+                )}
             </Stack>
-            <Stack my={5} justifyContent={"center"} alignItems={"center"}>
+            {/* <Stack my={5} justifyContent={"center"} alignItems={"center"}>
                 <Pagination count={10} />
-            </Stack>
+            </Stack> */}
         </Box>
     )
 }

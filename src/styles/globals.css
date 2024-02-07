@@ -312,9 +312,22 @@ a {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: justify;
+  line-height: 1.5;
 }
 .postContent p{
   padding: 10px 0;
+}
+.postContent ul{
+  padding-left: 20px;
+}
+.postContent ul li{
+  padding: 5px 0
+}
+
+.postContent h2,
+.postContent h3,
+.postContent h4{
+  padding: 10px 0
 }
 
 @media (max-width: 720px){

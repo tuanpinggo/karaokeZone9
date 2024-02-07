@@ -2,7 +2,7 @@ import ListPost from "@/components/listPost";
 import { Box, Breadcrumbs, Container, Divider, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 
-export default function NewPage(){
+export default function NewPage({ posts }){
     return(
         <Box
             ml={{xs: 0, md: '300px'}}
@@ -27,8 +27,17 @@ export default function NewPage(){
                     </Breadcrumbs>
                 </Stack>
                 <Divider />
-                <ListPost />
+                <ListPost posts={posts?.data}/>
             </Container>
         </Box>
     )
+}
+
+// This also gets called at build time
+export async function getStaticProps({ params }) {
+    const res = await fetch('http://localhost:3000/api/getAllPost')
+    const posts = await res.json()
+
+    // Pass post data to the page via props
+    return { props: { posts } }
 }
