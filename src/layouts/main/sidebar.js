@@ -115,7 +115,7 @@ export default function LeftSidebar(props){
                 <Image src={"/assets/logo.jpg"} width={297} height={180} alt="Karaoke Zone 9 - 179 Nguyễn Tuân" priority />
             </Link>
 
-            <Stack px={3} flexGrow={1} my={5}>
+            <Stack px={3} flexGrow={1} my={2}>
                 <Navbar setOpen={setOpen}/>
                 <Stack>
                     <Typography variant="body1" fontSize={16} fontWeight={500} color={"#fff"}>Hotline</Typography>

@@ -1,20 +1,25 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, CircularProgress, Container, Stack, Typography } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2';
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-// This also gets called at build time
-export async function getStaticProps({ params }) {
-    
-    // If the route is like /posts/1, then params.id is 1
-    const res = await fetch(`http://localhost:3000/api/getfile`)
-    const post = await res.json()
-   
-    // Pass post data to the page via props
-    return { props: { post } }
-}
+export default function GalleryPage(){
 
-export default function GalleryPage({ post }){
+    const [loading,setLoading] = useState(true)
+
+    const [data,setData] = useState()
+
+    useEffect(()=>{
+        const getData = async () => {
+            const res = await fetch(`http://localhost:3000/api/getfile`)
+            const response = await res.json()
+            setData(response)
+            setLoading(false)
+        }
+
+        getData()
+    },[])
+
     return(
         <Box
             ml={{xs: 0, md: '300px'}}
@@ -28,7 +33,9 @@ export default function GalleryPage({ post }){
             </Typography>
             <Container maxWidth="lg">
                 <Stack spacing={3}>
-                    {post.map((item,key) =>
+
+                    {loading && <CircularProgress />}
+                    {!loading && data.map((item,key) =>
                         <React.Fragment key={key}>
                             <Stack direction={"row"} spacing={1} alignItems={"center"}>
                                 <Typography variant="h2" component={"h2"} fontSize={20} fontWeight={700} color={"#222"}>

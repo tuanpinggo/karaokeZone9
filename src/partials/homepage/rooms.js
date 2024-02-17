@@ -41,7 +41,6 @@ const datas = [
             '/assets/gallery/phong-hat/z5116032798749_9839253916b5de19b8cc0a23b541344d.jpg',
             '/assets/gallery/phong-hat/z5116032808209_03ed8beabecc0744f02109cea248bb1e.jpg',
             '/assets/gallery/phong-hat/z5116032808461_3861909691349b315646e5e0ed3888bf.jpg',
-            '/assets/gallery/phong-hat/',
         ]
     },
     {

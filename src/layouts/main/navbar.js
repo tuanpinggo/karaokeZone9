@@ -51,7 +51,7 @@ export default function Navbar({setOpen}){
 
     return(
         <>
-            <Stack spacing={1.5} divider={<Divider sx={{bgcolor: '#666'}}/>} mb={6}>
+            <Stack spacing={1} divider={<Divider sx={{bgcolor: '#666'}}/>} mb={3}>
                 {menu.map(item =>
                     // <Link href={item.link} key={item.id}>
                     <Button variant="text" key={item.id} sx={{justifyContent: 'flex-start'}} onClick={() => handleClick(item.link)}>

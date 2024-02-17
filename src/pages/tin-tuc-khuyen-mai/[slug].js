@@ -55,7 +55,7 @@ export default function DetailPost({post}){
 }
 
 export async function getStaticPaths() {
-    const res = await fetch('http://localhost:3000/api/getAllPost')
+    const res = await fetch('http://localhost/zone9/wp-json/api/posts')
     const posts = await res.json()
     
     // Get the paths we want to pre-render based on posts
@@ -76,11 +76,12 @@ export async function getStaticProps({ params }) {
     const slug = params?.slug
 
     const id = slug.slice(slug.search('_id=') + 4)
+
     // params contains the post `id`.
     // If the route is like /posts/1, then params.id is 1
-    const res = await fetch(`http://localhost:3000/api/getDetailPost?post_id=${id}`)
+    const res = await fetch(`http://localhost/zone9/wp-json/api/posts/${id}`)
     const post = await res.json()
-   
+
     // Pass post data to the page via props
     return { props: { post } }
 }
