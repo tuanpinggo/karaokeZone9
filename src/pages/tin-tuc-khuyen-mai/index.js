@@ -35,7 +35,7 @@ export default function NewPage({ posts }){
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-    const res = await fetch('http://localhost/zone9/wp-json/api/posts')
+    const res = await fetch('https://adm.karaokezone9.vn/wp-json/api/posts')
     const posts = await res.json()
 
     // Pass post data to the page via props

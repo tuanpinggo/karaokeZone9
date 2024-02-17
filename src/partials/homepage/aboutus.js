@@ -56,7 +56,7 @@ export default function AboutUs(){
                                     <iframe 
                                         width="100%" 
                                         height="506" 
-                                        src="https://www.youtube.com/embed/GXKwM5icmm0?si=aKOJQI-LCkv3dG99" 
+                                        src="https://www.youtube.com/embed/izzE-Bzhnec?si=5dptUspPcYSnY2wi" 
                                         title="YouTube video player" 
                                         frameborder="0" 
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
